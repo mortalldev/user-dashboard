@@ -10,7 +10,7 @@ export const productsApi = baseApi.injectEndpoints({
                 method: 'GET',
             }),
             providesTags: ['PRODUCTS'],
-            transformResponse: (data: ApiResponse<ProductData>) => data,
+            transformResponse: (data: ApiResponse<ProductData[]>) => data,
         }),
     }),
 });

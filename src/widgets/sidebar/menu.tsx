@@ -66,7 +66,7 @@ const SidebarMenu = () => {
                         to={item.path}
                         className={({ isActive }) =>
                             `flex items-center gap-3 p-2 rounded-md transition
-              ${isActive ? 'bg-primary text-white' : 'hover:bg-gray-100'}`
+              ${isActive ? 'bg-primary text-white' : 'hover:bg-gray-100 dark:hover:bg-primary/20'}`
                         }
                     >
                         <Icon size={18} />

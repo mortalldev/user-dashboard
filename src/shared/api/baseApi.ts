@@ -24,7 +24,7 @@ const baseQueryWithAuth: typeof baseQuery = async (args, api, extraOptions) => {
 
         localStorage.clear();
 
-        window.location.href = '/login';
+        // window.location.href = '/login';
     }
 
     return result;

@@ -30,7 +30,6 @@ export function LoginForm() {
     const onSubmit = async (values: LoginFormValues) => {
         try {
             const res = await login(values).unwrap();
-
             if (res) {
                 navigate('/');
                 toast.success('Login success!');
