@@ -33,7 +33,14 @@ export function LoginForm() {
             if (res) {
                 navigate('/');
                 toast.success('Login success!');
-                dispatch(setCredentials({ token: res.access_token }));
+                dispatch(
+                    setCredentials({
+                        token: {
+                            access: res.access_token,
+                            refresh: res.refresh_token,
+                        },
+                    })
+                );
             }
         } catch (error: any) {
             toast.error(error?.data?.message);

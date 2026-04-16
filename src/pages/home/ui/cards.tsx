@@ -5,6 +5,7 @@ import { useUsersQuery } from '@/features/users';
 import { useCardsQuery } from '@/features/cards';
 
 import { CreditCard, Users, Box, ShieldCheck } from 'lucide-react';
+import Loader from '@/widgets/loader';
 
 const cardConfig = [
     {
@@ -43,6 +44,10 @@ export function DashboardCards() {
             {cardConfig.map((item, i) => {
                 const { data, isLoading } = item.useQuery(undefined);
                 const Icon = item.icon;
+
+                if (isLoading) {
+                    return <Loader />;
+                }
 
                 return (
                     <Card

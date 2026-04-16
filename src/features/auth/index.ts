@@ -14,13 +14,30 @@ export const authApi = baseApi.injectEndpoints({
             }),
             transformResponse: (data: LoginResponse) => data,
             invalidatesTags: ['AUTH'],
+            async onQueryStarted(_, { dispatch, queryFulfilled }) {
+                try {
+                    const { data } = await queryFulfilled;
+
+                    dispatch(
+                        setCredentials({
+                            userData: null,
+                            token: {
+                                access: data.access_token,
+                                refresh: data.refresh_token,
+                            },
+                        })
+                    );
+                } catch (err) {
+                    console.log('LOGIN ERROR', err);
+                }
+            },
         }),
 
         refresh: builder.mutation({
-            query: (data) => ({
+            query: ({ refresh_token }: { refresh_token: string }) => ({
                 url: '/auth/refresh',
                 method: 'POST',
-                body: data,
+                body: { refresh_token },
             }),
             invalidatesTags: ['AUTH'],
         }),
@@ -43,7 +60,6 @@ export const authApi = baseApi.injectEndpoints({
             async onQueryStarted(_, { dispatch, queryFulfilled, getState }) {
                 try {
                     const { data } = await queryFulfilled;
-
                     const state = getState() as RootState;
 
                     dispatch(
