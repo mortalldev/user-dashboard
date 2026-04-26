@@ -1,6 +1,6 @@
-import type { Currency } from '@/api/type';
+import type { Currency } from '@/shared/types';
 
-export type LimitCreditType = 'card' | 'credit' | 'uzcard';
+export type LimitCreditType = 'card' | 'credit' | 'uzcard' | 'visa';
 
 export type LimitPeriodType = 'day' | 'week' | 'month';
 

@@ -45,9 +45,15 @@ const ProductFilter = ({ search, setSearch, productType, setProductType }: Produ
                     </SelectTrigger>
 
                     <SelectContent position="popper">
-                        <SelectItem value="all">All</SelectItem>
-                        <SelectItem value="CREDIT">Credit</SelectItem>
-                        <SelectItem value="CARD">Card</SelectItem>
+                        <SelectItem value="all" className="py-2">
+                            All
+                        </SelectItem>
+                        <SelectItem value="CREDIT" className="py-2">
+                            Credit
+                        </SelectItem>
+                        <SelectItem value="CARD" className="py-2">
+                            Card
+                        </SelectItem>
                     </SelectContent>
                 </Select>
             </div>

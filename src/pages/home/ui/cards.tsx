@@ -46,7 +46,7 @@ export function DashboardCards() {
                 const Icon = item.icon;
 
                 if (isLoading) {
-                    return <Loader />;
+                    return <Loader key={i} />;
                 }
 
                 return (

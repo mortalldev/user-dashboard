@@ -60,7 +60,8 @@ const authSlice = createSlice({
         logOut: (state) => {
             state.token = null;
             state.userData = null;
-            localStorage.clear();
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
         },
     },
 });

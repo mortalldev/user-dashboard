@@ -13,6 +13,7 @@ import Transfers from '@/pages/transfers';
 import Cards from '@/pages/cards';
 import Wallets from '@/pages/wallets';
 import ProtectedRoute from './protected-route';
+import CardDetail from '@/pages/card-detail';
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
                     {
                         path: '/cards',
                         element: <Cards />,
+                    },
+                    {
+                        path: '/cards/:id',
+                        element: <CardDetail />,
                     },
                     {
                         path: '/wallets',

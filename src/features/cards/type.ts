@@ -27,3 +27,22 @@ export type CardData = {
     type: LimitCreditType;
     user_id: number;
 };
+
+export type CardFamilyData = {
+    app_id: string | null;
+    branch: string | null;
+    card_number: string;
+    created_at: string;
+    currency: string;
+    design_id: null;
+    expire: string;
+    holder_name: string;
+    id: number;
+    parent_card_id: string;
+    pin_resets: number;
+    status: string;
+    token: string | null;
+    type: LimitCreditType;
+    updated_at: string;
+    user_id: string;
+};

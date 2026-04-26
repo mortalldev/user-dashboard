@@ -10,3 +10,5 @@ export function cn(...inputs: ClassValue[]) {
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+export const formatCard = (num: string) => num.replace(/(.{4})/g, '$1 ').trim();
