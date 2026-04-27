@@ -41,6 +41,6 @@ jobs:
             - name: Build
               run: npm run build
 
-            # Dependency Check ( zaif va yaroqsiz kutubxonalarni topadi )
+            # Dependency Check ( zaif va yaroqsiz kutubxonalarni packagelarni topadi )
             # - name: Audit dependencies
             #   run: npm audit --audit-level=high
