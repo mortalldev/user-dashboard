@@ -5,6 +5,9 @@ on:
         branches:
             - '**'
 
+permissions:
+    pull-requests: write
+
 jobs:
     stats:
         runs-on: ubuntu-latest
