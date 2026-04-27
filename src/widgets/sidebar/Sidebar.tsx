@@ -1,5 +1,5 @@
+import SidebarMenu from '@/widgets/sidebar/menu';
 import { useNavigate } from 'react-router-dom';
-import SidebarMenu from './menu';
 
 const Sidebar = () => {
     const navigate = useNavigate();

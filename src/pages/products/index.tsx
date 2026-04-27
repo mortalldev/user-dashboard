@@ -1,4 +1,4 @@
-import ProductList from './ui/products';
+import ProductList from '@/pages/products/ui/products';
 
 const Products = () => {
     return (

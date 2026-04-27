@@ -26,8 +26,6 @@ export const CardsFilter = ({ filter, onChange, onReset }: Props) => {
 
     return (
         <div className="flex flex-col items-center sm:flex-row gap-3 w-full">
-            {/* Search */}
-
             <div className="w-full max-w-sm border rounded-xl flex items-center pl-3 focus-within:border-primary bg-input duration-200">
                 <Search size={18} className="text-muted-foreground" />
 
@@ -39,7 +37,6 @@ export const CardsFilter = ({ filter, onChange, onReset }: Props) => {
                 />
             </div>
 
-            {/* Type */}
             <Select value={filter.type} onValueChange={(val) => onChange({ ...filter, type: val })}>
                 <SelectTrigger className="py-5 px-10 rounded-xl border bg-input focus:ring-0 focus:ring-offset-0 outline-none">
                     <SelectValue placeholder="Card type" />
@@ -60,7 +57,6 @@ export const CardsFilter = ({ filter, onChange, onReset }: Props) => {
                 </SelectContent>
             </Select>
 
-            {/* Status */}
             <Select
                 value={filter.status}
                 onValueChange={(val) => onChange({ ...filter, status: val })}
@@ -81,7 +77,6 @@ export const CardsFilter = ({ filter, onChange, onReset }: Props) => {
                 </SelectContent>
             </Select>
 
-            {/* Reset */}
             {isActive && (
                 <Button variant="ghost" onClick={onReset} className="py-5 px-5">
                     Reset

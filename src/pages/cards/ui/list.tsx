@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { LayoutGrid, List } from 'lucide-react';
 import Loader from '@/widgets/loader';
-import { CardItem } from './card';
-import { CardsTable } from './table';
-import { CardsPagination } from './pagination';
-import { CardsFilter } from './filter';
-import type { CardsFilter as CardsFilterType } from './filter';
+import { CardsFilter, type CardsFilter as CardsFilterType } from '@/pages/cards/ui/filter';
 import { useCardsQuery } from '@/features/cards';
+import { CardItem } from '@/pages/cards/ui/card';
+import { CardsTable } from '@/pages/cards/ui/table';
+import { CardsPagination } from '@/pages/cards/ui/pagination';
 
 const DEFAULT_FILTER: CardsFilterType = {
     search: '',
@@ -61,7 +60,6 @@ const CardsList = () => {
 
     return (
         <div className="w-full flex flex-col gap-4 h-full overflow-hidden">
-            {/* Header */}
             <div className="flex items-center justify-between shrink-0">
                 <CardsFilter filter={filter} onChange={handleFilterChange} onReset={handleReset} />
                 <div className="flex gap-2">
@@ -82,11 +80,7 @@ const CardsList = () => {
                 </div>
             </div>
 
-            {/* Filter */}
-
-            {/* Scrollable content */}
             <div className="flex-1 overflow-y-auto no-scrollbar pr-1">
-                {/* Card View */}
                 {view === 'card' && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                         {cards.length === 0 ? (
@@ -105,7 +99,6 @@ const CardsList = () => {
                     </div>
                 )}
 
-                {/* Table View */}
                 {view === 'table' && (
                     <div className="w-full space-y-4">
                         {cards.length === 0 ? (
@@ -127,7 +120,6 @@ const CardsList = () => {
                 )}
             </div>
 
-            {/* Card view pagination */}
             {view === 'card' && lastPage > 1 && cards.length > 0 && (
                 <div className="shrink-0">
                     <CardsPagination

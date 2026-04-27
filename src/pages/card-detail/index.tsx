@@ -52,8 +52,6 @@ const CardDetail = () => {
 
     const { data: card, isLoading } = useCardByIdQuery(Number(id));
 
-    console.log(card);
-
     if (isLoading) return <Loader />;
 
     if (!card)
@@ -65,7 +63,6 @@ const CardDetail = () => {
 
     return (
         <div className="w-full flex flex-col gap-6 p-4 h-full overflow-y-auto no-scrollbar">
-            {/* Back */}
             <div className="shrink-0">
                 <Button
                     variant="ghost"
@@ -77,7 +74,6 @@ const CardDetail = () => {
                 </Button>
             </div>
 
-            {/* Hero card */}
             <Card className="rounded-2xl border border-purple-500/20 bg-purple-500/10 backdrop-blur-xl shadow-lg">
                 <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     <div className="p-4 rounded-2xl bg-purple-500/20">
@@ -107,7 +103,6 @@ const CardDetail = () => {
                 </CardContent>
             </Card>
 
-            {/* General info */}
             <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3 pl-1">
                     General
@@ -147,7 +142,6 @@ const CardDetail = () => {
                 </div>
             </div>
 
-            {/* Card info */}
             <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3 pl-1">
                     Card Info
@@ -192,7 +186,6 @@ const CardDetail = () => {
                 </div>
             </div>
 
-            {/* Security & Settings */}
             <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3 pl-1">
                     Security & Settings

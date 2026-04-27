@@ -1,10 +1,10 @@
 import { useProductsQuery } from '@/features/products';
-import ProductFilter from './filter';
-import ProductTable from './table';
 import Loader from '@/widgets/loader';
 import { useState, useMemo } from 'react';
 import type { ProductDataType } from '@/features/products/type';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import ProductFilter from '@/pages/products/ui/filter';
+import ProductTable from '@/pages/products/ui/table';
 
 const ProductList = () => {
     const [search, setSearch] = useState('');

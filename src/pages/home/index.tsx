@@ -1,5 +1,5 @@
-import { DashboardCards } from './ui/cards';
-import { DashboardCharts } from './ui/chart';
+import { DashboardCards } from '@/pages/home/ui/cards';
+import { DashboardCharts } from '@/pages/home/ui/chart';
 
 const Home = () => {
     return (

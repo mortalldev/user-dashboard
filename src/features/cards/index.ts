@@ -1,5 +1,6 @@
+import { CardPaths } from '@/features/cards/path';
+import type { CardData, CardFamilyData } from '@/features/cards/type';
 import { baseApi } from '@/shared/api/baseApi';
-import type { CardData, CardFamilyData } from './type';
 import type { ApiResponse } from '@/shared/types';
 
 export const cardsApi = baseApi.injectEndpoints({
@@ -9,7 +10,7 @@ export const cardsApi = baseApi.injectEndpoints({
             { page?: number; perPage?: number } | undefined
         >({
             query: (params) => ({
-                url: '/cards',
+                url: CardPaths.CARDS,
                 method: 'GET',
                 params: {
                     page: params?.page ?? 1,
@@ -22,7 +23,7 @@ export const cardsApi = baseApi.injectEndpoints({
 
         cardById: builder.query<CardData, number>({
             query: (id) => ({
-                url: `/cards/${id}`,
+                url: `${CardPaths.CARDS}/${id}`,
                 method: 'GET',
             }),
             providesTags: ['CARDS'],
@@ -30,7 +31,7 @@ export const cardsApi = baseApi.injectEndpoints({
 
         familyCards: builder.query({
             query: () => ({
-                url: '/family-cards',
+                url: CardPaths.FAMILY_CARDS,
                 method: 'GET',
             }),
             transformResponse: (data: ApiResponse<CardFamilyData[]>) => data,

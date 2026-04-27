@@ -1,12 +1,13 @@
+import { LimitsPaths } from '@/features/limits/path';
+import type { LimitsData } from '@/features/limits/type';
 import { baseApi } from '@/shared/api/baseApi';
-import type { LimitsData } from './type';
 import type { ApiResponse } from '@/shared/types';
 
 export const limitsApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         limits: builder.query({
             query: () => ({
-                url: '/limits/global',
+                url: LimitsPaths.LIMITS,
                 method: 'GET',
             }),
             providesTags: ['LIMITS'],

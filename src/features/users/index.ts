@@ -1,12 +1,13 @@
+import { UsersPaths } from '@/features/users/path';
+import type { UsersData } from '@/features/users/type';
 import { baseApi } from '@/shared/api/baseApi';
-import type { UsersData } from './type';
 import type { ApiResponse } from '@/shared/types';
 
 export const usersApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         users: builder.query({
             query: () => ({
-                url: '/users',
+                url: UsersPaths.USERS,
                 method: 'GET',
             }),
             providesTags: ['USERS'],

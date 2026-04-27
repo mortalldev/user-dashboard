@@ -1,7 +1,7 @@
+import Menu from '@/widgets/navbar/menu';
+import ThemeToggle from '@/widgets/navbar/ThemeToggle';
+import { menu } from '@/widgets/sidebar/menu';
 import { useLocation } from 'react-router-dom';
-import Menu from './menu';
-import ThemeToggle from './ThemeToggle';
-import { menu } from '../sidebar/menu';
 
 const Navbar = () => {
     const { pathname } = useLocation();

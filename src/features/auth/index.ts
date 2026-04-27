@@ -1,6 +1,7 @@
 import type { RootState } from '@/app/store';
 import { setCredentials } from '@/entities/auth/authSlice';
-import type { AuthData, LoginResponse } from './type';
+import { AuthPaths } from '@/features/auth/path';
+import type { AuthData, LoginResponse } from '@/features/auth/type';
 import { baseApi } from '@/shared/api/baseApi';
 import type { LoginFormValues } from '@/shared/lib/validations/auth';
 
@@ -8,7 +9,7 @@ export const authApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         login: builder.mutation({
             query: (data: LoginFormValues) => ({
-                url: '/auth/login',
+                url: AuthPaths.LOGIN,
                 method: 'POST',
                 body: data,
             }),
@@ -35,7 +36,7 @@ export const authApi = baseApi.injectEndpoints({
 
         refresh: builder.mutation({
             query: ({ refresh_token }: { refresh_token: string }) => ({
-                url: '/auth/refresh',
+                url: AuthPaths.REFRESH,
                 method: 'POST',
                 body: { refresh_token },
             }),
@@ -44,7 +45,7 @@ export const authApi = baseApi.injectEndpoints({
 
         logout: builder.mutation({
             query: () => ({
-                url: '/auth/logout',
+                url: AuthPaths.LOGOUT,
                 method: 'POST',
             }),
             invalidatesTags: ['AUTH'],
@@ -52,7 +53,7 @@ export const authApi = baseApi.injectEndpoints({
 
         profile: builder.query({
             query: () => ({
-                url: '/auth/me',
+                url: AuthPaths.PROFILE,
                 method: 'GET',
             }),
             providesTags: ['AUTH'],

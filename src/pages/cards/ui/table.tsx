@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { Eye } from 'lucide-react';
 import { formatCard } from '@/shared/lib/utils';
 import type { CardData } from '@/features/cards/type';
-import { StatusBadge } from './badge';
+import { StatusBadge } from '@/pages/cards/ui/badge';
 
 type Props = {
     cards: CardData[];

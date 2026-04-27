@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { CreditCard } from 'lucide-react';
 import { formatCard } from '@/shared/lib/utils';
 import type { CardData } from '@/features/cards/type';
-import { StatusBadge } from './badge';
+import { StatusBadge } from '@/pages/cards/ui/badge';
 
 type Props = {
     card: CardData;

@@ -1,4 +1,4 @@
-import CardsList from './ui/list';
+import CardsList from '@/pages/cards/ui/list';
 
 const Cards = () => {
     return (
