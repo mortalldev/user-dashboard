@@ -21,8 +21,26 @@ jobs:
               with:
                   node-version: '18'
 
+            # Dependency Install ( package larni install qilish uchun )
             - name: Install dependencies
               run: npm install --legacy-peer-deps
 
+            # Prettier ( kodlarni formatlash uchun )
             - name: Run Prettier check
               run: npx prettier --check . --ignore-path .prettierignore
+
+            # ESLint ( kod xatoliklarni tekshiradi )
+            - name: Run ESLint
+              run: npx eslint . --ext .ts,.js,.tsx,.jsx
+
+            # Unit Tests ( avtomatik test )
+            - name: Run Tests
+              run: npm run test
+
+            # Build Check ( loyiha build bo'ladimi )
+            - name: Build
+              run: npm run build
+
+            # Dependency Check ( zaif va yaroqsiz kutubxonalarni topadi )
+            # - name: Audit dependencies
+            #   run: npm audit --audit-level=high
