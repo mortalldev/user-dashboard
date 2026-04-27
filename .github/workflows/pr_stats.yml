@@ -1,0 +1,41 @@
+name: PR Stats
+
+on:
+    pull_request:
+        branches:
+            - '**'
+
+permissions:
+    pull-requests: write
+
+jobs:
+    stats:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - name: Update PR Stats
+              uses: actions/github-script@v6
+              with:
+                  script: |
+                      const { data: pr } = await github.rest.pulls.get({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        pull_number: context.issue.number,
+                      });
+
+                      const body = pr.body || '';
+                      const updated = body
+                        .replace('Files Modified:', `Files Modified: ${pr.changed_files}`)
+                        .replace('Lines Added:', `Lines Added: ${pr.additions}`)
+                        .replace('Lines Removed:', `Lines Removed: ${pr.deletions}`);
+
+                      await github.rest.pulls.update({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        pull_number: context.issue.number,
+                        body: updated,
+                      });
