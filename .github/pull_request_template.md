@@ -15,12 +15,6 @@
 
 ## 💡 Why These Changes
 
-<!-- ## ✅ Testing & Verification
-
-- [ ] Local da test qildim
-- [ ] Unit test yozdim
-- [ ] Mavjud testlar o'tdi -->
-
 ## ⚠️ Impact & Notes
 
 ## 📸 Screenshots (if UI change)
