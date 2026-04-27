@@ -15,11 +15,11 @@
 
 ## 💡 Why These Changes
 
-## ✅ Testing & Verification
+<!-- ## ✅ Testing & Verification
 
 - [ ] Local da test qildim
 - [ ] Unit test yozdim
-- [ ] Mavjud testlar o'tdi
+- [ ] Mavjud testlar o'tdi -->
 
 ## ⚠️ Impact & Notes
 
