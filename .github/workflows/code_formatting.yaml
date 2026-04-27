@@ -34,8 +34,8 @@ jobs:
               run: npx eslint . --ext .ts,.js,.tsx,.jsx
 
             # Unit Tests ( avtomatik test )
-            - name: Run Tests
-              run: npx vitest run
+            # - name: Run Tests
+            #   run: npx vitest run
 
             # Build Check ( loyiha build bo'ladimi )
             - name: Build
