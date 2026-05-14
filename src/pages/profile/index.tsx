@@ -1,7 +1,7 @@
-import { useProfileQuery } from '@/entities/auth';
 import { Shield, Mail, User, Key } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Loader from '@/widgets/loader';
+import { useProfileQuery } from '@/features/auth';
 
 const Profile = () => {
     const { data, isLoading } = useProfileQuery(undefined);
