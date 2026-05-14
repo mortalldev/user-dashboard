@@ -36,7 +36,10 @@ export const Menu = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button className="rounded-full w-10 h-10" variant={'outline'}>
+                <Button
+                    className="rounded-full flex items-center justify-center text-sm pt-0.5 w-10 h-10"
+                    variant={'outline'}
+                >
                     {user?.name?.slice(0, 1)}
                 </Button>
             </DropdownMenuTrigger>

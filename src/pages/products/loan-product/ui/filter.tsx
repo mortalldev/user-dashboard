@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/select';
 
 import type { ProductDataType } from '@/features/products/type';
-import CreateProductForm from '@/pages/products/ui/create-product-form';
+import CreateProductForm from '@/pages/products/loan-product/ui/create-product-form';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
 

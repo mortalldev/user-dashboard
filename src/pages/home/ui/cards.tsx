@@ -40,7 +40,7 @@ const cardConfig = [
 
 export function DashboardCards() {
     return (
-        <div className="flex flex-wrap gap-4">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-5">
             {cardConfig.map((item, i) => {
                 const { data, isLoading } = item.useQuery(undefined);
                 const Icon = item.icon;
@@ -52,7 +52,7 @@ export function DashboardCards() {
                 return (
                     <Card
                         key={i}
-                        className={`rounded-2xl border backdrop-blur-xl shadow-lg transition hover:scale-[1.01] ${item.bg} py-6 w-full sm:w-sm`}
+                        className={`rounded-2xl border backdrop-blur-xl shadow-lg transition hover:scale-[1.01] ${item.bg} py-6 w-full`}
                     >
                         <CardHeader className="flex flex-row items-center justify-between">
                             <div>

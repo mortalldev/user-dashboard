@@ -82,7 +82,7 @@ const CardsList = () => {
 
             <div className="flex-1 overflow-y-auto no-scrollbar pr-1">
                 {view === 'card' && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-5">
                         {cards.length === 0 ? (
                             <p className="text-sm text-muted-foreground col-span-full text-center py-10">
                                 No cards found

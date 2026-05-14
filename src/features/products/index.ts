@@ -1,6 +1,10 @@
 import { ProductPaths } from '@/features/products/path';
-import type { ProductData } from '@/features/products/type';
+import type { CardProductData, ProductData } from '@/features/products/type';
 import { baseApi } from '@/shared/api/baseApi';
+import type {
+    CreateProductFormValues,
+    EditProductFormValues,
+} from '@/shared/lib/validations/product';
 import type { ApiResponse } from '@/shared/types';
 
 export const productsApi = baseApi.injectEndpoints({
@@ -15,7 +19,7 @@ export const productsApi = baseApi.injectEndpoints({
         }),
 
         createProduct: builder.mutation({
-            query: (data) => ({
+            query: (data: CreateProductFormValues) => ({
                 url: ProductPaths.PRODUCTS,
                 method: 'POST',
                 body: data,
@@ -24,16 +28,16 @@ export const productsApi = baseApi.injectEndpoints({
         }),
 
         updateProduct: builder.mutation({
-            query: (data) => ({
-                url: `${ProductPaths.PRODUCTS}/${data}`,
-                method: 'PUT',
-                body: data,
+            query: (data: EditProductFormValues) => ({
+                url: `${ProductPaths.PRODUCTS}/${data.productId}`,
+                method: 'PATCH',
+                body: data.body,
             }),
             invalidatesTags: ['PRODUCTS'],
         }),
 
         deleteProduct: builder.mutation({
-            query: (id) => ({
+            query: (id: number) => ({
                 url: `${ProductPaths.PRODUCTS}/${id}`,
                 method: 'DELETE',
             }),
@@ -46,6 +50,7 @@ export const productsApi = baseApi.injectEndpoints({
                 method: 'GET',
             }),
             providesTags: ['PRODUCTS'],
+            transformResponse: (data: ApiResponse<CardProductData[]>) => data,
         }),
     }),
 });
