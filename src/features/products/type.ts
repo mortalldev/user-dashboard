@@ -1,3 +1,5 @@
+import type { Currency } from '@/shared/types';
+
 export type ProductDataType = 'CREDIT' | 'CARD';
 
 export type ProductData = {
@@ -20,4 +22,32 @@ export type ProductData = {
     title_ru: string;
     title_uz: string;
     type: ProductDataType;
+};
+
+export type CardProductData = {
+    active: string;
+    alias: null;
+    cardCode: null;
+    cardProductCode: null;
+    category: string;
+    contractTypeId: null;
+    currency: Currency;
+    currency_code: string;
+    delivery_price: string;
+    description: string | null;
+    description_en: string | null;
+    description_uz: string | null;
+    glcode: null;
+    id: number;
+    image: string | null;
+    is_credit: number | null;
+    issue_settings: null;
+    lifetime: null;
+    order: null;
+    price: string;
+    slip_code: null;
+    title: string;
+    type: string;
+    virtual: null;
+    year_service: null;
 };

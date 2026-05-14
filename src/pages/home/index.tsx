@@ -4,8 +4,8 @@ import { DashboardCharts } from '@/pages/home/ui/chart';
 const Home = () => {
     return (
         <div className="w-full h-full flex flex-col gap-5">
-            <DashboardCharts />
             <DashboardCards />
+            <DashboardCharts />
         </div>
     );
 };

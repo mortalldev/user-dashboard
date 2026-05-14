@@ -3,8 +3,8 @@ import Loader from '@/widgets/loader';
 import { useState, useMemo } from 'react';
 import type { ProductDataType } from '@/features/products/type';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
-import ProductFilter from '@/pages/products/ui/filter';
-import ProductTable from '@/pages/products/ui/table';
+import ProductFilter from '@/pages/products/loan-product/ui/filter';
+import ProductTable from '@/pages/products/loan-product/ui/table';
 
 const ProductList = () => {
     const [search, setSearch] = useState('');
@@ -31,7 +31,7 @@ const ProductList = () => {
     }
 
     return (
-        <div className="space-y-4">
+        <div className="h-full overflow-hidden flex flex-col w-full">
             <ProductFilter
                 search={search}
                 setSearch={setSearch}

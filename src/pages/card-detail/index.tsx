@@ -74,34 +74,38 @@ const CardDetail = () => {
                 </Button>
             </div>
 
-            <Card className="rounded-2xl border border-purple-500/20 bg-purple-500/10 backdrop-blur-xl shadow-lg">
-                <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div className="p-4 rounded-2xl bg-purple-500/20">
-                        <CreditCard className="w-8 h-8 text-purple-400" />
-                    </div>
+            <div>
+                <Card className="rounded-2xl border border-purple-500/20 bg-purple-500/10 backdrop-blur-xl shadow-lg">
+                    <CardContent className="p-6 flex flex-col gap-4">
+                        <div className="flex items-center gap-4">
+                            <div className="p-4 rounded-2xl bg-purple-500/20 shrink-0">
+                                <CreditCard className="w-8 h-8 text-purple-400" />
+                            </div>
 
-                    <div className="flex-1 min-w-0">
-                        <p className="text-xs text-muted-foreground mb-1">Card Number</p>
-                        <p className="text-2xl font-mono font-bold tracking-widest text-white">
-                            {formatCard(card.card_number)}
-                        </p>
-                        <p className="text-sm text-muted-foreground mt-1">
-                            {card.bank ?? 'Unknown Bank'} · {card.type}
-                        </p>
-                    </div>
+                            <div className="flex-1">
+                                <p className="text-xs text-muted-foreground mb-1">Card Number</p>
+                                <p className="text-xl sm:text-2xl font-mono font-bold tracking-widest text-white break-all">
+                                    {formatCard(card.card_number)}
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                    {card.bank ?? 'Unknown Bank'} · {card.type}
+                                </p>
+                            </div>
+                        </div>
 
-                    <div className="flex flex-col items-end gap-2 shrink-0">
-                        <Badge variant={card.status === 1 ? 'default' : 'destructive'}>
-                            {card.status === 1 ? 'Active' : 'Inactive'}
-                        </Badge>
-                        {card.is_main === 1 && (
-                            <Badge className="bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
-                                Main Card
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <Badge variant={card.status === 1 ? 'default' : 'destructive'}>
+                                {card.status === 1 ? 'Active' : 'Inactive'}
                             </Badge>
-                        )}
-                    </div>
-                </CardContent>
-            </Card>
+                            {card.is_main === 1 && (
+                                <Badge className="bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
+                                    Main Card
+                                </Badge>
+                            )}
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
 
             <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3 pl-1">

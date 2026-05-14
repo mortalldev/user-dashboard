@@ -11,17 +11,7 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <Provider store={store}>
             <ThemeProvider defaultTheme="dark" storageKey="theme">
-                <Toaster
-                    position="top-right"
-                    theme="dark"
-                    richColors
-                    closeButton
-                    expand
-                    toastOptions={{
-                        className:
-                            'rounded-2xl border border-white/10 bg-neutral-900 text-white shadow-lg',
-                    }}
-                />
+                <Toaster position="top-right" duration={1500} expand />
                 <App />
             </ThemeProvider>
         </Provider>

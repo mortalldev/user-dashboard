@@ -4,6 +4,8 @@ export type AuthData = {
     email: string;
     role: ROLE;
     name: string;
+    roles: string[];
+    permissions: string[];
 };
 
 export type LoginResponse = {

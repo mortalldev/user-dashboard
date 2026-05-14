@@ -13,6 +13,8 @@ import { Badge } from '@/components/ui/badge';
 import type { ProductData } from '@/features/products/type';
 import { Pencil, Trash2 } from 'lucide-react';
 import { useState } from 'react';
+import EditProductForm from '@/pages/products/loan-product/ui/edit-product-form';
+import DeleteProduct from '@/pages/products/loan-product/ui/delete-product';
 
 type Props = {
     data: ProductData[];
@@ -21,6 +23,10 @@ type Props = {
 const ITEMS_PER_PAGE = 10;
 
 const ProductTable = ({ data }: Props) => {
+    const [openEdit, setOpenEdit] = useState(false);
+    const [openDelete, setOpenDelete] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
+
     const [page, setPage] = useState(1);
 
     const totalPages = Math.ceil((data?.length || 0) / ITEMS_PER_PAGE);
@@ -75,11 +81,25 @@ const ProductTable = ({ data }: Props) => {
                                 </TableCell>
 
                                 <TableCell className="text-right space-x-2">
-                                    <Button size="icon" variant="outline">
+                                    <Button
+                                        onClick={() => {
+                                            setSelectedProduct(item);
+                                            setOpenEdit(true);
+                                        }}
+                                        size="icon"
+                                        variant="outline"
+                                    >
                                         <Pencil className="w-4 h-4" />
                                     </Button>
 
-                                    <Button size="icon" variant="destructive">
+                                    <Button
+                                        onClick={() => {
+                                            setOpenDelete(true);
+                                            setSelectedProduct(item);
+                                        }}
+                                        size="icon"
+                                        variant="destructive"
+                                    >
                                         <Trash2 className="w-4 h-4" />
                                     </Button>
                                 </TableCell>
@@ -112,6 +132,17 @@ const ProductTable = ({ data }: Props) => {
                     </Button>
                 </div>
             </div>
+
+            {selectedProduct && openEdit && (
+                <EditProductForm open={openEdit} setOpen={setOpenEdit} product={selectedProduct!} />
+            )}
+            {selectedProduct && openDelete && (
+                <DeleteProduct
+                    openDelete={openDelete}
+                    setOpenDelete={setOpenDelete}
+                    product={selectedProduct}
+                />
+            )}
         </div>
     );
 };
