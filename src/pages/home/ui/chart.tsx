@@ -13,7 +13,7 @@ import {
     Legend,
 } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLimitsQuery } from '@/features/limits';
+import { useGetGlobalLimitsQuery } from '@/features/limits';
 import { useProductsQuery } from '@/features/products';
 import { useUsersQuery } from '@/features/users';
 import { useCardsQuery } from '@/features/cards';
@@ -52,7 +52,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 
 export function DashboardCharts() {
     const { data: productsData, isLoading: productsLoading } = useProductsQuery(undefined);
-    const { data: limitsData, isLoading: limitsLoading } = useLimitsQuery(undefined);
+    const { data: limitsData, isLoading: limitsLoading } = useGetGlobalLimitsQuery(undefined);
     const { data: usersData, isLoading: usersLoading } = useUsersQuery(undefined);
     const { data: cardsData, isLoading: cardsLoading } = useCardsQuery(undefined);
 

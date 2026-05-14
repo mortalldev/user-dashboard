@@ -53,6 +53,6 @@ const baseQueryWithAuth: typeof baseQuery = async (args, api, extraOptions) => {
 export const baseApi = createApi({
     reducerPath: 'api',
     baseQuery: baseQueryWithAuth,
-    tagTypes: ['AUTH', 'PRODUCTS', 'WALLETS', 'LIMITS', 'TRANSFERS', 'CARDS', 'USERS'],
+    tagTypes: ['AUTH', 'PRODUCTS', 'WALLETS', 'LIMITS', 'TRANSFERS', 'CARDS', 'USERS', 'KYC'],
     endpoints: () => ({}),
 });

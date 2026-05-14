@@ -1,4 +1,3 @@
-import { useProfileQuery } from '@/entities/auth';
 import {
     ArrowLeftRight,
     CreditCard,
@@ -10,7 +9,6 @@ import {
     Wallet,
     type LucideIcon,
 } from 'lucide-react';
-import { useLogoutMutation } from '@/entities/auth';
 import { logOut } from '@/entities/auth/authSlice';
 import { useAppDispatch } from '@/shared/lib/utils';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -25,6 +23,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useState } from 'react';
 import ConfirmDeleteDialog from '@/components/confirm-delete-modal';
+import { useLogoutMutation, useProfileQuery } from '@/features/auth';
 
 type SidebarMenuType = {
     path: string;

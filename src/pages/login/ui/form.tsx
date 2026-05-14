@@ -5,13 +5,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 import { useNavigate } from 'react-router-dom';
-import { useLoginMutation } from '@/entities/auth';
 import { toast } from 'sonner';
 import { setCredentials } from '@/entities/auth/authSlice';
 import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { loginSchema, type LoginFormValues } from '@/shared/lib/validations/auth';
 import { useAppDispatch } from '@/shared/lib/utils';
+import { useLoginMutation } from '@/features/auth';
 
 export function LoginForm() {
     const navigate = useNavigate();

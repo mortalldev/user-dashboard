@@ -13,7 +13,16 @@ export const usersApi = baseApi.injectEndpoints({
             providesTags: ['USERS'],
             transformResponse: (data: ApiResponse<UsersData>) => data,
         }),
+
+        usersById: builder.query({
+            query: (userId: number) => ({
+                url: `${UsersPaths.USERS}/${userId}`,
+                method: 'GET',
+            }),
+            providesTags: ['USERS'],
+            transformResponse: (data: UsersData) => data,
+        }),
     }),
 });
 
-export const { useUsersQuery } = usersApi;
+export const { useUsersQuery, useUsersByIdQuery } = usersApi;

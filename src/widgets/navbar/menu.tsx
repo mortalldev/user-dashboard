@@ -1,4 +1,3 @@
-import { useLogoutMutation, useProfileQuery } from '@/entities/auth';
 import { logOut } from '@/entities/auth/authSlice';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useAppDispatch } from '@/shared/lib/utils';
+import { useLogoutMutation, useProfileQuery } from '@/features/auth';
 
 export const Menu = () => {
     const { data: user } = useProfileQuery(undefined);

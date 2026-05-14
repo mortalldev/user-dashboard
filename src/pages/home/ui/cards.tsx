@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLimitsQuery } from '@/features/limits';
+import { useGetGlobalLimitsQuery } from '@/features/limits';
 import { useProductsQuery } from '@/features/products';
 import { useUsersQuery } from '@/features/users';
 import { useCardsQuery } from '@/features/cards';
@@ -18,7 +18,7 @@ const cardConfig = [
     {
         title: 'Limits',
         icon: ShieldCheck,
-        useQuery: useLimitsQuery,
+        useQuery: useGetGlobalLimitsQuery,
         color: 'text-yellow-400',
         bg: 'bg-yellow-500/10 border-yellow-500/20',
     },
