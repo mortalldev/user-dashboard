@@ -1,9 +1,9 @@
-import ComingSoonCard from '@/components/coming-soon-card';
+import UsersList from '@/pages/users/ui/list';
 
 const Users = () => {
     return (
         <div className="w-full h-full">
-            <ComingSoonCard />
+            <UsersList />
         </div>
     );
 };

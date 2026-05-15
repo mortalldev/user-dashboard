@@ -17,7 +17,7 @@ const ComingSoonCard = () => {
                 </h1>
 
                 <p className="text-xs sm:text-sm text-muted-foreground text-center max-w-xs">
-                    We're working hard to bring this feature to you. Stay tuned!
+                    The API is ready — UI integration is in progress. Stay tuned!
                 </p>
             </div>
         </div>
