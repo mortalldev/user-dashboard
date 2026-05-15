@@ -14,6 +14,7 @@ import Cards from '@/pages/cards';
 import Wallets from '@/pages/wallets';
 import ProtectedRoute from './protected-route';
 import CardDetail from '@/pages/card-detail';
+import UsersDetail from '@/pages/users-detail';
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
                     {
                         path: '/users',
                         element: <Users />,
+                    },
+                    {
+                        path: '/users/:id',
+                        element: <UsersDetail />,
                     },
                     {
                         path: '/transfers',
